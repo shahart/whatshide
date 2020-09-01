@@ -1,2 +1,2 @@
 # WhatsHide
-a private fork of an extension to hide private chats of WhatsApp Wev
+This extension hides private chats of WhatsApp Web

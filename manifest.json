@@ -1,15 +1,30 @@
 {
-    "browser_action": {
-    },
-    "content_scripts": [ {
-       "js": [ "/scripts/jquery-3.1.0.min.js", "/scripts/filterdom.js" ],
-       "matches": [ "http://web.whatsapp.com/*", "https://web.whatsapp.com/*", "http://whatsapp.com/*", "https://whatsapp.com/*" ]
-    } ],
-    "description": "WhatsApp Web. - show only white list of contacts, prevent settings change, removal of messages, etc.",
-    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk9oxGPGTfURx5xOcJn4FIwantRc/VviJq9iO8Ck0cR2GuFX2BK+Rv8tY8DNDEy4dF5OupOQyzuyFqA92YDFSqjze4jCDhiKHEpCK6652xNd6wV6xXVskNBy1NJN7CvseXA678ngz35kWAILjI2aQCZYgDvYt6FOYe5SILTOOkeKoWHirCkHkjqJUeD1Q62ubb7h87yh21Pa2ycdOrzmU4UWxMXjMMAmRqykF5OnL3oHf+/DrF0Y8nmHK7c6GUY0BFcEHnKJF5TjHSHvXdaD8CTG/wF6gCq31XIRCsuLis5kyFKfMn4BIByuXIemPWgP4lvV1LhnzRbcpo2P23yjBswIDAQAB",
     "manifest_version": 2,
+
     "name": "WhatsHide",
-    "permissions": [ "activeTab", "https://ajax.googleapis.com/" ],
-    "version": "1.81"
- }
- 
+    "description": "__MSG_descriptionApp__",
+    "version": "1.6",
+
+    "default_locale": "en",
+
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_popup": "popup.html",
+        "default_title": "__MSG_defaultTitle__"
+    },
+
+    "content_scripts": [{
+        "matches": ["http://web.whatsapp.com/*", "https://web.whatsapp.com/*", "http://whatsapp.com/*", "https://whatsapp.com/*"],
+        "js": ["/scripts/jquery-3.1.0.min.js", "/scripts/filterdom.js"]
+    }],
+
+
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/",
+        "storage"
+    ]
+
+
+
+}
