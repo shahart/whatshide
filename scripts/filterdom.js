@@ -28,8 +28,10 @@ function processChat(index) {
     var el = $(this);
     var str = el.text();
 
-    if (str.toLowerCase().containsAny(substrings)) {
-        el.show();
+	if (str.toLowerCase().containsAny(substrings) ||
+		// fix some wsapp change that prevented cell number contacts
+		str.toLowerCase().substring(1).containsAny(substrings)) {
+		el.show();
     } else {
         el.hide();
     }
@@ -53,11 +55,14 @@ function onGetValue() {
 	// hide delete message/ forward/ etc.
 	$(document.querySelectorAll("._2s_eZ")).hide();	
 
+	// hide scroll for old messages
+	$(document.querySelectorAll("._2-aNW")).css("overflow-y", "hidden");
+
     //Get All chats
-	var itens = document.querySelectorAll(".eJ0yJ");
+	var items = document.querySelectorAll(".eJ0yJ");
 	
 	//Process all chats
-    $(itens).each(processChat);
+    $(items).each(processChat);
 		
     //Continue the execution
     setTimeout(onGetValue, 250);
