@@ -58,6 +58,13 @@ function onGetValue() {
 	// hide scroll for old messages
 	$(document.querySelectorAll("._2-aNW")).css("overflow-y", "hidden");
 
+	$(document.querySelectorAll("._2-aNW")).keydown(function(e) {
+		switch(e.which) {
+			case 38: // up
+				e.stopImmediatePropagation()
+		}
+	});
+
     //Get All chats
 	var items = document.querySelectorAll(".eJ0yJ");
 	
